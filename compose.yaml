@@ -1,0 +1,36 @@
+services:
+  falkordb:
+    image: falkordb/falkordb:v4.14.11
+    ports: ["127.0.0.1:6380:6379"]
+    volumes: ["graph-data:/data"]
+    command: ["redis-server", "--loadmodule", "/FalkorDB/bin/falkordb.so", "--appendonly", "yes"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+  backend:
+    build: ./backend
+    environment:
+      FALKORDB_HOST: falkordb
+      LLM_PROVIDER: ${LLM_PROVIDER:-demo}
+      GROQ_API_KEY: ${GROQ_API_KEY:-}
+      GROQ_MODEL: ${GROQ_MODEL:-llama-3.3-70b-versatile}
+      LLM_INPUT_USD_PER_MILLION: ${LLM_INPUT_USD_PER_MILLION:-}
+      LLM_OUTPUT_USD_PER_MILLION: ${LLM_OUTPUT_USD_PER_MILLION:-}
+    ports: ["127.0.0.1:8000:8000"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health', timeout=4)"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    depends_on:
+      falkordb: {condition: service_healthy}
+  frontend:
+    build: ./frontend
+    ports: ["127.0.0.1:5173:80"]
+    depends_on:
+      backend: {condition: service_healthy}
+volumes:
+  graph-data:
+

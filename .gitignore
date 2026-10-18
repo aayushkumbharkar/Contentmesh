@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+node_modules/
+dist/
+*.log
+
+*.tsbuildinfo
+submission/*.mp4
+submission/*.webm
+.playwright-mcp/

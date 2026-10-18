@@ -1,0 +1,39 @@
+1
+00:00:00,150 --> 00:00:02,580
+Agents lose context between sessions.
+
+2
+00:00:03,800 --> 00:00:14,014
+ContextMesh gives agents graph-native memory in FalkorDB. This seeded graph models a synthetic AcmeShop incident, with its services, owners and changes.
+
+3
+00:00:15,500 --> 00:00:26,660
+In session one, a user records an incident note with a unique observation, cart-video-729, and runs an investigation. The note is stored as evidence.
+
+4
+00:00:28,200 --> 00:00:40,019
+Agents hand off through the graph: the Researcher gathers facts, the Planner plans, the Executor records an evidence-backed decision, and the Verifier re-checks paths for gaps or contradictions.
+
+5
+00:00:40,500 --> 00:00:46,612
+Now a separate, new session asks what earlier change could explain the incident, who owns it, and what was learned before.
+
+6
+00:00:48,000 --> 00:00:56,429
+It recalls the cart-video-729 note, a Redis TTL change, owner Maya Chen and the INC-104 lesson.
+
+7
+00:00:57,300 --> 00:01:04,406
+Evidence and the actual graph paths come straight from FalkorDB. They are investigation leads, not proof of cause.
+
+8
+00:01:06,000 --> 00:01:15,688
+The accessible list view shows the same data without 3D. Here we inspect the Redis TTL configuration change, with its properties and relationships.
+
+9
+00:01:17,800 --> 00:01:22,177
+After a page refresh, the saved session and its evidence are still there.
+
+10
+00:01:23,200 --> 00:01:28,354
+ContextMesh: persistent memory, coordinated agents, explainable evidence.

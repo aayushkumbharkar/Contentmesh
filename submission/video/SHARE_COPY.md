@@ -2,6 +2,7 @@
 
 | File | Duration | Format | Contents |
 | --- | --- | --- | --- |
+| `../contextmesh-demo-voiced.mp4` (**upload this one**) | 89.3 s | 1920×1080 H.264 + AAC, −16 LUFS | Technical demo with a neural voice-over (edge-tts `en-US-AndrewMultilingualNeural`). Footage is a stream copy of the technical demo. Subtitles: `contextmesh-demo.srt`. Built by `scripts/add_voiceover.py` |
 | `contextmesh-technical-demo.mp4` | 89.3 s | 1920×1080 H.264 + AAC | Problem card → genuine browser capture (seed, session 1, four-stage run, session 2 recall, evidence paths, list view, refresh) → closing card |
 | `contextmesh-trailer.mp4` | 20.5 s | 1920×1080 H.264 + AAC | Title → real graph view → real agent-handoff panel → real evidence paths → closing card |
 | `thumbnail.png` | — | 1280×720 | Frame from the trailer at 6 s (real graph view) |

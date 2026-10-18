@@ -1,0 +1,13 @@
+ContextMesh technical demo narration
+Voice: en-US-AndrewMultilingualNeural (edge-tts, rate +5%)
+
+[00.15-02.58] Agents lose context between sessions.
+[03.80-14.01] ContextMesh gives agents graph-native memory in FalkorDB. This seeded graph models a synthetic AcmeShop incident, with its services, owners and changes.
+[15.50-26.66] In session one, a user records an incident note with a unique observation, cart-video-729, and runs an investigation. The note is stored as evidence.
+[28.20-40.02] Agents hand off through the graph: the Researcher gathers facts, the Planner plans, the Executor records an evidence-backed decision, and the Verifier re-checks paths for gaps or contradictions.
+[40.50-46.61] Now a separate, new session asks what earlier change could explain the incident, who owns it, and what was learned before.
+[48.00-56.43] It recalls the cart-video-729 note, a Redis TTL change, owner Maya Chen and the INC-104 lesson.
+[57.30-64.41] Evidence and the actual graph paths come straight from FalkorDB. They are investigation leads, not proof of cause.
+[66.00-75.69] The accessible list view shows the same data without 3D. Here we inspect the Redis TTL configuration change, with its properties and relationships.
+[77.80-82.18] After a page refresh, the saved session and its evidence are still there.
+[83.20-88.35] ContextMesh: persistent memory, coordinated agents, explainable evidence.

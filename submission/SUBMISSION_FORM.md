@@ -28,11 +28,11 @@ https://github.com/aayushkumbharkar/Contentmesh (public, verified with `gh repo 
 
 ## Demo video URL
 
-**PENDING — manual upload required.** The finished file is `submission/video/contextmesh-technical-demo.mp4` (89.3 s, 1920×1080). Upload it to YouTube as Unlisted or Public, then paste the URL here. Title and description are in `submission/video/SHARE_COPY.md`.
+**PENDING — manual upload required.** The file to upload is `submission/contextmesh-demo-voiced.mp4` (89.3 s, 1920×1080, neural voice-over, SRT subtitles in `submission/video/contextmesh-demo.srt`). Upload it to YouTube as Unlisted or Public, then paste the URL here. Title and description are in `submission/video/SHARE_COPY.md`.
 
 ## Live demo URL
 
-**PENDING — no public deployment exists.** Railway rejected project creation with "Your trial has expired. Please select a plan to continue using Railway." (checked again 18 Oct 22:21 IST). The Google Cloud project has billing disabled. Render has no CLI or API credential available in this environment. The steps to deploy are in `docs/deployment.md`.
+**PENDING — Render deploy needs the account owner to sign in.** A free deployment is ready: `render.yaml` and `deploy/single-container/` run the real FastAPI backend with an internal FalkorDB in one container. It passed the full demo locally with `PORT=10000`. Open https://dashboard.render.com/blueprint/new?repo=https://github.com/aayushkumbharkar/Contentmesh, sign in, authorize GitHub, and apply. Paste the resulting `https://contextmesh-*.onrender.com` URL here only after `/api/health` returns `{"status":"ok","database":"FalkorDB"}`. Free-plan note: the graph resets when the instance restarts. Hugging Face (402: Docker Spaces need PRO), Railway (trial expired), GCP (billing disabled) and Vercel (needs external FalkorDB) were ruled out.
 
 ## How FalkorDB was used technically
 

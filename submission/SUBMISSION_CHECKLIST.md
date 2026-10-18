@@ -12,12 +12,11 @@
 | Launch trailer | ✅ Built (FFmpeg, not Brag) | `submission/video/contextmesh-trailer.mp4` (20.5 s). Brag install was blocked |
 | Thumbnail | ✅ | `submission/video/thumbnail.png` |
 | Storyboard / script | ✅ | `DEMO_VIDEO_STORYBOARD.md`, `DEMO_SCRIPT.md` |
-| Blog | ⚠️ Check rebuild | https://aayushkumbharkar.github.io/ContextMesh/ failed to build (non-UTF-8 byte); fixed and pushed. Confirm the page loads before submitting |
+| Blog | ✅ Published | https://aayushkumbharkar.github.io/Contentmesh/ (HTTP 200 verified; Pages build succeeded) |
 | Live demo URL | ❌ Blocked | Railway trial expired, GCP billing disabled, no Render credential. See `docs/deployment.md` |
 | Submission form | ⏳ | `SUBMISSION_FORM.md`. Paste the YouTube URL; leave the live URL empty unless a deployment is verified |
 
 ## Remaining manual actions
 
 1. Upload `submission/video/contextmesh-technical-demo.mp4` to YouTube (Unlisted or Public) using the copy in `submission/video/SHARE_COPY.md`. Add the URL to the form.
-2. Open https://aayushkumbharkar.github.io/ContextMesh/ and confirm the article renders.
-3. Optional live deployment: select a Railway plan, or create Render and FalkorDB Cloud accounts, then follow `docs/deployment.md`. Verify `/api/health` returns `{"status":"ok","database":"FalkorDB"}` before submitting the URL.
+2. Optional live deployment: select a Railway plan, or create Render and FalkorDB Cloud accounts, then follow `docs/deployment.md`. Verify `/api/health` returns `{"status":"ok","database":"FalkorDB"}` before submitting the URL.

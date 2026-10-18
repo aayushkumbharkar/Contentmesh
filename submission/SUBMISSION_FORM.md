@@ -45,4 +45,4 @@ https://github.com/aayushkumbharkar/Contentmesh (public, verified with `gh repo 
 
 ## Blog URL
 
-https://aayushkumbharkar.github.io/ContextMesh/ — a GitHub Pages article published from the earlier `ContextMesh` repository. Its build failed because `docs/index.md` contained a non-UTF-8 byte. That is fixed in this commit, and the URL must return the article after the Pages rebuild before it is submitted (see `SUBMISSION_CHECKLIST.md`). Source: `submission/BLOG_POST.md`.
+https://aayushkumbharkar.github.io/Contentmesh/ — published with GitHub Pages from `docs/` in the submission repository. Verified HTTP 200 with the article title on 18 Oct 2026, 22:40 IST. The same article is also at https://aayushkumbharkar.github.io/ContextMesh/; its earlier build failure (a non-UTF-8 byte) is fixed and the rebuild succeeded. Source: `submission/BLOG_POST.md`.

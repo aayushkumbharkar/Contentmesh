@@ -107,4 +107,4 @@ OpenAI Codex assisted implementation, integration, and testing, including native
 
 ## Explore the project
 
-[Source code and local setup](https://github.com/aayushkumbharkar/ContextMesh) · [Graph schema and queries](https://github.com/aayushkumbharkar/ContextMesh/blob/main/docs/graph.md) · [Verification report](https://github.com/aayushkumbharkar/ContextMesh/blob/main/docs/verification.md)
+[Source code and local setup](https://github.com/aayushkumbharkar/Contentmesh) Â· [Graph schema and queries](https://github.com/aayushkumbharkar/Contentmesh/blob/main/docs/graph.md) Â· [Verification report](https://github.com/aayushkumbharkar/Contentmesh/blob/main/docs/verification.md)

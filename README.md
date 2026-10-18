@@ -2,6 +2,13 @@
 
 A graph-native incident workspace: four agents coordinate through persistent FalkorDB records, while a React / Three.js interface shows the evidence behind their work. AcmeShop is entirely synthetic.
 
+## Submission status (18 Oct 2026)
+
+- Demo video (89 s, real capture): `submission/video/contextmesh-technical-demo.mp4`; trailer: `submission/video/contextmesh-trailer.mp4`
+- Verified locally: 17 tests pass against real FalkorDB; `scripts/verify_demo.py --restart` passes (cross-session recall survives FalkorDB and backend restarts)
+- Public live deployment: **not available.** Hosting accounts were blocked; see [deployment](docs/deployment.md)
+- Submission answers: [submission/SUBMISSION_FORM.md](submission/SUBMISSION_FORM.md)
+
 ## Start
 
 Requires Docker Desktop with Linux containers (or Docker Engine + Compose).

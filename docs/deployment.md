@@ -31,3 +31,15 @@ The existing `compose.yaml` remains the recommended local startup route, with it
 - A temporary ngrok tunnel to the local Docker stack was blocked by the agent's permission policy and was not used.
 
 **There is no public live URL.** The fastest remaining route is a Railway plan, using the two-service setup described above (the root `Dockerfile` already serves the UI and API from one origin, so no CORS change is needed). Alternatively, use Render with a FalkorDB Cloud instance: a Render Web Service using the root `Dockerfile`, health check `/api/health`, and environment variables `FALKORDB_HOST`, `FALKORDB_PORT`, `FALKORDB_PASSWORD` (supported in `backend/app/graph/__init__.py`), and `LLM_PROVIDER=demo`.
+
+## Free single-container deployment (prepared 18 Oct 2026, 23:00 IST)
+
+`deploy/single-container/Dockerfile` builds the UI, the FastAPI API and FalkorDB into one image. `start.sh` starts FalkorDB bound to **127.0.0.1** (protected mode, AOF on local disk), waits for it, then runs uvicorn on `$PORT`. The database is never exposed publicly, and no password or TLS is needed because it is reachable only inside the container. Verified locally: the image builds from the repository root, `/api/health` returns `{"status":"ok","database":"FalkorDB"}`, and `scripts/verify_demo.py --url http://localhost:10000` passes (22 paths) with `PORT=10000`, using about 56 MiB of RAM.
+
+**Render (free web service):** `render.yaml` at the repository root is a Blueprint for this image (`plan: free`, health check `/api/health`, auto-deploy from `main`). Deploy it: open https://dashboard.render.com/blueprint/new?repo=https://github.com/aayushkumbharkar/Contentmesh, sign in, authorize GitHub access to `Contentmesh`, and apply. Free-plan limits: the service spins down after about 15 minutes idle (the first request then takes about a minute), and the filesystem is ephemeral. The graph persists across sessions and page reloads while the instance runs, but resets on restart or redeploy (click **Load synthetic demo** to reseed). This is a demo, not durable production storage.
+
+Providers ruled out on 18 Oct 2026:
+- Hugging Face Docker Space: API returned 402 ("Docker Spaces on free cpu-basic require a PRO subscription").
+- Vercel: serverless functions cannot run FalkorDB; it would need an external FalkorDB Cloud instance (account signup required). The CLI is not installed or authenticated.
+- Railway: trial expired.
+- Google Cloud: billing disabled.

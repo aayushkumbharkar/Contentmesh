@@ -1,0 +1,16 @@
+# Render Blueprint: one free web service running FastAPI + an internal FalkorDB (127.0.0.1 only).
+# Free-plan limits: spins down after ~15 min idle; the filesystem is ephemeral, so the graph is
+# reset when the instance restarts or redeploys. Data persists across sessions and page reloads while it runs.
+services:
+  - type: web
+    name: contextmesh
+    runtime: docker
+    plan: free
+    branch: main
+    dockerfilePath: ./deploy/single-container/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: LLM_PROVIDER
+        value: demo

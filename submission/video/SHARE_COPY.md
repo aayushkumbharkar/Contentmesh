@@ -7,9 +7,9 @@
 | `contextmesh-trailer.mp4` | 20.5 s | 1920×1080 H.264 + AAC | Title → real graph view → real agent-handoff panel → real evidence paths → closing card |
 | `thumbnail.png` | — | 1280×720 | Frame from the trailer at 6 s (real graph view) |
 
-Source footage: `submission/contextmesh-demo.mp4`, a genuine headless-Chrome capture produced by `scripts/record_demo.py` against the Docker stack with real FalkorDB. The edit is built by `scripts/build_videos.py`. The audio is a soft synthesized ambient bed; there is no narration. All UI footage is unmodified application output plus captions. AcmeShop data is synthetic.
+Source footage: `submission/contextmesh-demo.mp4`, a genuine headless-Chrome capture produced by `scripts/record_demo.py` against the Docker stack with real FalkorDB. The edit is built by `scripts/build_videos.py`. The technical demo and trailer use a soft synthesized ambient bed with no narration. The voiced cut adds the neural narration over that bed, lowered by 9 dB. All UI footage is unmodified application output plus captions. AcmeShop data is synthetic.
 
-**Brag:** the requested Brag / Hyperframes workflow was not used. Installing it (`npx skills add https://github.com/latent-spaces/brag --skill brag`) was blocked by this session's permission policy, and plugin commands are not available to the agent. The trailer was made with FFmpeg from real footage instead. To regenerate it with Brag, run `/plugin marketplace add latent-spaces/brag`, `/plugin install brag@brag`, then `/brag --full` in an interactive Claude Code session.
+**Brag:** the trailer was made with FFmpeg from real footage, not Brag. Brag v0.4.0 was installed later (`claude plugin install brag@brag`), but its full Hyperframes workflow was not run before the deadline. To make an alternative trailer, run `/brag --full` in a new Claude Code session.
 
 ## YouTube
 

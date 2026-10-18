@@ -10,3 +10,5 @@ dist/
 submission/*.mp4
 submission/*.webm
 .playwright-mcp/
+submission/recordings/*.webm
+submission/video/work/

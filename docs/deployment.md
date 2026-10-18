@@ -43,3 +43,7 @@ Providers ruled out on 18 Oct 2026:
 - Vercel: serverless functions cannot run FalkorDB; it would need an external FalkorDB Cloud instance (account signup required). The CLI is not installed or authenticated.
 - Railway: trial expired.
 - Google Cloud: billing disabled.
+
+## Live deployment (18 Oct 2026, 23:12 IST)
+
+Deployed by the account owner through the Render Blueprint: https://contextmesh-e25o.onrender.com. Verified with `/api/health` (FalkorDB OK), with `scripts/verify_demo.py --url https://contextmesh-e25o.onrender.com` (passed, 22 paths), and by loading the page in headless Chrome (graph of 34 nodes and 86 relationships rendered).

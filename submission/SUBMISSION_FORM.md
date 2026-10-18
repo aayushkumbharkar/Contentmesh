@@ -1,6 +1,6 @@
 # Graph Hacks submission form — copy-ready answers
 
-Status as of 18 October 2026, 22:40 IST. Fields marked **PENDING** have not been verified. Do not fill them with placeholders.
+Status as of 18 October 2026, 23:15 IST. All URLs below have been checked.
 
 ## Project title
 
@@ -28,11 +28,18 @@ https://github.com/aayushkumbharkar/Contentmesh (public, verified with `gh repo 
 
 ## Demo video URL
 
-**PENDING — manual upload required.** The file to upload is `submission/contextmesh-demo-voiced.mp4` (89.3 s, 1920×1080, neural voice-over, SRT subtitles in `submission/video/contextmesh-demo.srt`). Upload it to YouTube as Unlisted or Public, then paste the URL here. Title and description are in `submission/video/SHARE_COPY.md`.
+https://youtu.be/B06nzWsC9nk (Unlisted, uploaded by the owner; YouTube oEmbed returns the title, checked 18 Oct 2026 23:12 IST)
 
 ## Live demo URL
 
-**PENDING — Render deploy needs the account owner to sign in.** A free deployment is ready: `render.yaml` and `deploy/single-container/` run the real FastAPI backend with an internal FalkorDB in one container. It passed the full demo locally with `PORT=10000`. Open https://dashboard.render.com/blueprint/new?repo=https://github.com/aayushkumbharkar/Contentmesh, sign in, authorize GitHub, and apply. Paste the resulting `https://contextmesh-*.onrender.com` URL here only after `/api/health` returns `{"status":"ok","database":"FalkorDB"}`. Free-plan note: the graph resets when the instance restarts. Hugging Face (402: Docker Spaces need PRO), Railway (trial expired), GCP (billing disabled) and Vercel (needs external FalkorDB) were ruled out.
+https://contextmesh-e25o.onrender.com
+
+Render free web service built from `render.yaml` (`deploy/single-container/`), running the real FastAPI backend with FalkorDB bound to localhost inside the container. Verified 18 Oct 2026, 23:12 IST:
+- `GET /api/health` returns `{"status":"ok","database":"FalkorDB"}`.
+- `scripts/verify_demo.py --url https://contextmesh-e25o.onrender.com` passed: two sessions, cross-session recall, 22 real graph paths.
+- The browser shows 34 nodes and 86 relationships.
+
+Free-plan limits: the service sleeps after about 15 minutes idle (the first load takes about a minute), and the graph resets on restart or redeploy. Click **Load synthetic demo** to reseed it.
 
 ## How FalkorDB was used technically
 

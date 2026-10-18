@@ -89,6 +89,8 @@ One particularly useful test removes access to a persisted handoff and checks th
 
 Docker Compose configures FalkorDB append-only persistence and a named data volume. Ordinary container restarts preserve that volume; deliberately removing it erases the data. A fresh client round-trip test is distinct from a complete container-restart check, and neither is a performance benchmark.
 
+The current verification run passed all 17 tests against real FalkorDB. The frontend production build passed, and npm audit and pip-audit reported no known dependency vulnerabilities. These checks establish functional behavior for the tested scenarios, not performance or production-readiness.
+
 ## What building it taught me
 
 The most valuable constraint was requiring evidence to survive each boundary: session to memory, Researcher to Planner, and final answer to UI. It exposed shortcuts that a polished chat interface could otherwise conceal.
@@ -96,3 +98,8 @@ The most valuable constraint was requiring evidence to survive each boundary: se
 Bounded retrieval also makes tradeoffs visible. Term matching can miss relevant context, and result caps can omit useful evidence. The workflow is synchronous, writes are not one atomic transaction, and interrupted runs do not automatically resume. Public deployment needs authentication, authorization, rate limiting, and operational hardening.
 
 OpenAI Codex assisted implementation, integration, and testing, including native coding sub-agents with separate module ownership. Those engineering assistants are distinct from ContextMesh's four runtime roles. The goal of this project is a small, inspectable foundation: shared context that persists, coordination that leaves records, and answers whose supporting relationships can be examined.
+
+
+## Explore the project
+
+[Source code and local setup](https://github.com/aayushkumbharkar/ContextMesh) · [Graph schema and queries](https://github.com/aayushkumbharkar/ContextMesh/blob/main/docs/graph.md) · [Verification report](https://github.com/aayushkumbharkar/ContextMesh/blob/main/docs/verification.md)
